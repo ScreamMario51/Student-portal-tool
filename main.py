@@ -1,16 +1,21 @@
 import mechanize
 from bs4 import BeautifulSoup
 from time import sleep
-
+from os import stat
 
 import kivy
 kivy.require("2.0.0")
 
 from kivy.app import App
 from kivy.uix.label import Label
-
+from kivy.uix.textinput import TextInput
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.button import Button
+from kivy.uix.boxlayout import BoxLayout
 
 def get_lessons(username, password):
+
+    class_list = []
 
     browser = mechanize.Browser()
     browser.set_handle_robots(False)
@@ -36,7 +41,7 @@ def get_lessons(username, password):
     
         if "Homeroom" in i.text:
 
-            print(days[day_int])
+            class_list.append(days[day_int])
             
             if day_int == 4:
                 day_int = 0 
@@ -44,17 +49,85 @@ def get_lessons(username, password):
                 day_int += 1
 
         else:
-            print(i.get_text(separator="\n"))
+            #print(i.get_text(separator="\n"))
+            class_list.append("")
 
-        print("\n")
+    return class_list
+
+
+
+class MainScreen(GridLayout):
+
+
+    def get_class(self):
+
+        classes = get_lessons(username, password)
+
+
+    
+    get_classes = Button(text="Get classes", on_press=get_class)
 
 
 class MyApp(App):
 
+    global username
+    global password
+
+    username = ""
+    password = ""
+
+    t = None
+
     def build(self):
 
-        return Label(text="Timetable fetcher")
 
-if __name__ == '__main__':
+        def on_press_button(self):
+        
+            #username.select_all()
+            username_info = username.text
 
-    MyApp().run()
+
+            #password.select_all()
+            password_info = password.text
+
+            with open("info.txt", "w") as file:
+
+              file.write(username_info)
+              file.write('\n')
+              file.write(password_info)
+
+
+
+        if stat("info.txt").st_size == 0:
+
+            b = BoxLayout(orientation ='vertical')
+        
+            username = TextInput(font_size = 50,
+                        size_hint_y = None,
+                        height = 100)
+
+            password = TextInput(font_size = 50,
+                        size_hint_y = None,
+                        height = 100)
+
+            b.add_widget(username)
+            b.add_widget(password)
+    
+
+            button = Button(text='Please login',
+                            size_hint=(.2, .2),
+                            pos_hint={'center_x': .5, 'center_y': 0.9})
+            button.bind(on_press=on_press_button)
+
+            b.add_widget(button)
+
+            return b
+
+        else:
+
+            return MainScreen()
+
+    
+
+
+MyApp().run()
