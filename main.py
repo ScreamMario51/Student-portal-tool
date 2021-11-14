@@ -13,6 +13,10 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 
+
+username = ""
+password = ""
+
 def get_lessons(username, password):
 
     class_list = []
@@ -38,34 +42,25 @@ def get_lessons(username, password):
     for i in result:
 
         period = i.find_all("strong")
-    
+
         if "Homeroom" in i.text:
 
             class_list.append(days[day_int])
-            
+
             if day_int == 4:
                 day_int = 0 
             else:
                 day_int += 1
 
         else:
-            #print(i.get_text(separator="\n"))
-            class_list.append("")
+            class_list.append(i.get_text(separator="\n"))
+
+        #print("\n")
 
     return class_list
 
 
 
-class MainScreen(GridLayout):
-
-
-    def get_class(self):
-
-        classes = get_lessons(username, password)
-
-
-    
-    get_classes = Button(text="Get classes", on_press=get_class)
 
 
 class MyApp(App):
@@ -73,15 +68,11 @@ class MyApp(App):
     global username
     global password
 
-    username = ""
-    password = ""
-
-    t = None
 
     def build(self):
 
 
-        def on_press_button(self):
+        def on_press_button():
         
             #username.select_all()
             username_info = username.text
@@ -96,9 +87,29 @@ class MyApp(App):
               file.write('\n')
               file.write(password_info)
 
+    
+        def get_class(instance):
+
+            grid.remove_widget(get_classes)
+
+            print(username)
+            print(password)
+
+
+            classes = get_lessons(username, password)
+        
+            for i in classes:
+
+                print(i)
+
+                grid.add_widget(Label(text=i))
+
+
 
 
         if stat("info.txt").st_size == 0:
+
+
 
             b = BoxLayout(orientation ='vertical')
         
@@ -125,7 +136,25 @@ class MyApp(App):
 
         else:
 
-            return MainScreen()
+            info = open("info.txt", "r")
+
+            data = info.readlines()
+
+            username = data[0]
+            password = data[1]
+
+            info.close()
+
+
+            grid = GridLayout(cols = 5)
+
+
+            get_classes = Button(text="Get classes", size_hint=(.2, .2), pos_hint={'center_x': .5, 'center_y': 0.9})
+            get_classes.bind(on_press=get_class)
+
+            grid.add_widget(get_classes)
+
+            return grid
 
     
 
