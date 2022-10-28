@@ -1,0 +1,92 @@
+Monday<>Period 1
+Physics
+08:20 - 09:15
+Science Lab
+Mr Timothy Davidson<>09:15 - 10:35<>Period 3
+Computer Science
+10:35 - 11:30
+Sec Computing 1
+Mr Ross Armstrong<>11:30 - 13:25<>Period 5
+Biology
+13:25 - 14:20
+Biology Lab
+Mr Neil Roscoe<>14:20 - 14:25<>Period 6
+Biology
+14:25 - 15:20
+Biology Lab
+Mr Christopher Brown<>15:20 - 15:30<>Social Communication: Years 10 to 13
+15:30 - 16:20
+Learning Support Office
+Mr Owen Gleeson<>|Tuesday<>Period 1
+Personal, Social and Health Education
+08:20 - 09:15
+Business Studies
+Mr Steven Finn<>09:15 - 11:35<>Period 4
+Biology
+11:35 - 12:30
+Biology Lab
+Mr Neil Roscoe<>12:30 - 13:25<>Period 5
+Computer Science
+13:25 - 14:20
+Sec Computing 1
+Mr Ross Armstrong<>14:20 - 14:25<>Period 6
+Mathematics
+14:25 - 15:20
+Maths 2
+Dr Daniel Portelli<>|Wednesday<>Period 1
+Biology
+08:20 - 09:15
+Science Lab
+Mr Christopher Brown<>09:15 - 09:20<>Period 2
+Mathematics
+09:20 - 10:15
+Maths 1
+Ms Letitia Bekker<>10:15 - 10:35<>Period 3
+Physics
+10:35 - 11:30
+Science Lab
+Mr Timothy Davidson<>11:30 - 13:25<>Period 5
+UPrep
+13:25 - 14:20
+BTEC Room
+Mr Ben Salmon<>14:20 - 14:25<>Period 6
+Computer Science
+14:25 - 15:20
+Sec Computing 1
+Mr Ross Armstrong<>|Thursday<>Period 1
+Physics
+08:20 - 09:15
+Secondary Thai 3
+Mr Timothy Davidson<>09:15 - 09:20<>Period 2
+Biology
+09:20 - 10:15
+Science Lab
+Mr Christopher Brown<>10:15 - 13:25<>Period 5
+Mathematics
+13:25 - 14:20
+Maths 2
+Dr Daniel Portelli<>14:20 - 14:25<>Period 6
+Mathematics
+14:25 - 15:20
+Maths 1
+Ms Letitia Bekker<>|Friday<>Period 1
+Mathematics
+08:20 - 09:15
+Maths 1
+Dr Daniel Portelli<>09:15 - 09:20<>Period 2
+Computer Science
+09:20 - 10:15
+Sec Computing 1
+Mr Ross Armstrong<>10:15 - 10:35<>Period 3
+Computer Science
+10:35 - 11:30
+Sec Computing 1
+Mr Ross Armstrong<>11:30 - 11:35<>Period 4
+Physics
+11:35 - 12:30
+Language 5
+Mr Timothy Davidson<>12:30 - 13:25<>Period 5
+Physics
+13:25 - 14:20
+Science Lab
+Mr Timothy Davidson<>|
